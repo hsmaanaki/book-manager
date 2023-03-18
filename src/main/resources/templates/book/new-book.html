@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<style>
+    .form-group{
+        width: 95%;
+        align-content: center;
+        padding-left: 1rem;
+    }
+</style>
+<head>
+    <title>Create New Book</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela">
+
+</head>
+<body style="background-color: #3395FF; font-family: 'Varela';">
+    <div class="container">
+
+        <h1 style="text-align:center;">Enter Book Info</h1>
+        <div class="card mx-auto bg-dark text-white" style="width: 30rem; box-align: center; background-color: #ffffff">
+            <div style="align-content: center;">
+                <form action="/book/create" method="post">
+                     <div class="form-group">
+                        <label for="name">Title:</label>
+                        <input type="text" class="form-control" name="title" id="title" placeholder="Enter title"></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Author:</label>
+                        <input type="text" class="form-control" name="author" id="author" placeholder="Enter author"></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">ISBN:</label>
+                        <input type="text" class="form-control" name="isbn" id="isbn" placeholder="Enter isbn"></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price:</label>
+                        <input type="text" class="form-control" name="price" id="price" placeholder="Enter price"></input>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style = " margin-bottom: .5rem; margin-left: 1rem">Submit</button>
+                    <a th:href="@{/book/all}" class="btn btn-primary" style = "margin-bottom: .5rem; float: right; margin-right: 1.5rem;">View Book List</a>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

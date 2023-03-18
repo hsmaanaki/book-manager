@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en"
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <title>Book Info</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela">
+</head>
+<body style="background-color: #3395FF; font-family: 'Varela';">
+    <div class="container" style="margin-bottom: 2rem;">
+        <h1 style="text-align:center; color: #000000;">Book Info</h1>
+        <div class="card mx-auto bg-dark text-white" style="width: 20rem; box-align: center; background-color: #ffffff">                
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center;">Book</h5>
+                <p class="card-text" th:text=" 'ID: '+ ${book.id}" />
+                <p class="card-text" th:text="'Title: '+${book.title}" />
+                <p class="card-text" th:text="'Author: '+${book.author}" />
+                <p class="card-text" th:text="'ISBN: '+${book.isbn}" />
+                <p class="card-text" th:text="'Price: '+${book.price}" />                        
+                <a th:href="@{/book/update/id={id}(id=${book.id})}" class="btn btn-primary" style = "display: flow-root; font-weight: 550; margin-bottom: .5rem;">Edit</a>
+                <a th:href="@{/book/delete/id={id}(id=${book.id})}" class="btn btn-primary" style = "display: flow-root; font-weight: 550; margin-bottom: .5rem;">Delete</a>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-bottom: 2rem;">
+
+        <div class="card mx-auto bg-dark text-white" style="width: 20rem; height: 11rem; box-align: center; background-color: #ffffff">
+            <h5 class="card-title" style="text-align:center; margin-top: 1rem;">Menu</h5>
+            <div class="card-body">
+                <a th:href="@{/book/all}" class="btn btn-primary" style = "display: flow-root; font-weight: 550; margin-bottom: .5rem; ">View Book List</a>
+                <a th:href="@{/book/new-book}" class="btn btn-primary" style = "display: flow-root; font-weight: 550; margin-bottom: .5rem; ">Add New Book</a>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+</html>
